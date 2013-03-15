@@ -1,1 +1,1 @@
-Recipe example for client_side_validatiosn gem
+Recipe example for client_side_validations gem
