@@ -11,3 +11,18 @@ feature "home page" do
     page.should have_content("surf and turf")
   end
 end
+
+feature "new recipe" do
+  scenario "requires a name" do
+    visit new_recipe_path
+    click_on "Create Recipe"
+    page.body.downcase.should have_content "name can't be blank"
+  end
+
+  scenario "requires that the description be longer than 5 characters" do
+    visit new_recipe_path
+    click_on "Create Recipe"
+    page.body.downcase.should have_content "description is too short"
+  end
+end
+

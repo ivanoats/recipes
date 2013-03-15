@@ -21,6 +21,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'client_side_validations'
 
 group :test, :development do
   gem "factory_girl_rails"
