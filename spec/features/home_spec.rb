@@ -24,5 +24,12 @@ feature "new recipe" do
     click_on "Create Recipe"
     page.body.downcase.should have_content "description is too short"
   end
+
+  it "requires a name, description using client side validation", js: true do
+    visit new_recipe_path
+    find_field("Name").click
+    find_field("Description").click
+    page.body.should have_content "can't be blank"
+  end
 end
 
